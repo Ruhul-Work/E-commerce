@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import ProductList from './pages/ProductList';
+import Home from './pages/Home';
 import CartPage from './pages/CartPage';
 import Checkout from './pages/Checkout';
 import AdminLogin from './pages/AdminLogin'; // Import AdminLogin
@@ -13,11 +14,12 @@ function App() {
   return (
     <Router>
       <CartProvider>
-        <Navbar /> {/* Render Navbar outside of Routes to be present on all pages */}
+        <Navbar /> 
+        {/* Render Navbar outside of Routes to be present on all pages */}
         <div> {/* Add padding top to account for fixed Navbar */}
           <Routes>
             {/* Public Customer Routes */}
-            <Route path="/" element={<ProductList />} />
+            <Route path="/" element={<Home />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/checkout" element={<Checkout />} />
 
